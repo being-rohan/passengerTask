@@ -1,0 +1,12 @@
+<app-passcount 
+[totalcheckedin]="checkin"     [totalpasscount]="Passarray.length"></app-passcount>
+
+
+<ul class="list-group mb-3">
+<li class="list-group-item" *ngFor="let pass of Passarray">
+    {{pass.fullname}}
+
+</li>
+</ul>
+<app-pass-card (emitpassinfo)="ondeletefun($event)"
+*ngFor="let pass of Passarray" [Passobj]="pass"></app-pass-card>
